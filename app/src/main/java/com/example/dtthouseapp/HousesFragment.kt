@@ -9,9 +9,6 @@ import android.view.ViewGroup
 
 class HousesFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = HousesFragment()
-    }
 
     private lateinit var viewModel: HousesViewModel
 
@@ -22,10 +19,5 @@ class HousesFragment : Fragment() {
         return inflater.inflate(R.layout.houses_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HousesViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
 }
