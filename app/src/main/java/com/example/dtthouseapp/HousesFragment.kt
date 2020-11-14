@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 
 class HousesFragment : Fragment() {
@@ -28,6 +29,12 @@ class HousesFragment : Fragment() {
         val repo = HouseRepo(api)
         factory = HousesViewModelFactory(repo)
         viewModel = ViewModelProviders.of(this).get(HousesViewModel::class.java)
+
+        //use the adapter
+        viewModel.getHouses()
+        viewModel.houses.observe(viewLifecycleOwner, Observer { houses ->
+
+        })
 
 
     }
