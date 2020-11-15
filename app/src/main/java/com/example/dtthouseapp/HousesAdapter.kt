@@ -8,7 +8,8 @@ import com.example.dtthouseapp.databinding.RecyclerviewHouseBinding
 
 
 class HousesAdapter(
-    private val houses: List<HouseItem>
+    private val houses: List<HouseItem>,
+    housesFragment: HousesFragment
 ) : RecyclerView.Adapter<HousesAdapter.HousesViewHolder>() {
 
     override fun getItemCount() = houses.size
