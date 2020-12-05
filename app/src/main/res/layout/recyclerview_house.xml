@@ -39,12 +39,72 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="16dp"
+                        android:src="@{house.image}"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@mipmap/ic_launcher_round"
-                        android:src="@{house.image}"/>
+                        app:srcCompat="@mipmap/ic_launcher_round" />
+
+                    <TextView
+                        android:id="@+id/tvBathroom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="44dp"
+                        android:text="@{house.bathrooms}"
+                        app:layout_constraintEnd_toStartOf="@+id/tvSize"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvBedrooms"
+                        app:layout_constraintTop_toBottomOf="@+id/tvZip" />
+
+                    <TextView
+                        android:id="@+id/tvBedrooms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="44dp"
+                        android:text="@{house.bedrooms}"
+                        app:layout_constraintEnd_toStartOf="@+id/tvBathroom"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/imageView"
+                        app:layout_constraintTop_toBottomOf="@+id/tvZip" />
+
+                    <TextView
+                        android:id="@+id/tvPrice"
+                        android:text="@{house.price}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginTop="52dp"
+                        android:layout_marginEnd="162dp"
+                        android:layout_marginRight="162dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/imageView"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="44dp"
+                        android:text="@{house.size}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvBathroom"
+                        app:layout_constraintTop_toBottomOf="@+id/tvZip" />
+
+                    <TextView
+                        android:id="@+id/tvZip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@{house.zip}"
+                        app:layout_constraintStart_toEndOf="@+id/imageView"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -1,16 +1,16 @@
 package com.example.dtthouseapp
 
 data class HouseItem(
-    val bathrooms: Int,
-    val bedrooms: Int,
+    val bathrooms: String,
+    val bedrooms: String,
     val city: String,
     val createdDate: String,
     val description: String,
-    val id: Int,
+    val id: String,
     val image: String,
-    val latitude: Int,
-    val longitude: Int,
-    val price: Int,
-    val size: Int,
+    val latitude: String,
+    val longitude: String,
+    val price: String,
+    val size: String,
     val zip: String
 )

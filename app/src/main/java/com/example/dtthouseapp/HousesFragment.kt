@@ -14,7 +14,8 @@ class HousesFragment : Fragment() {
 
     private lateinit var factory: HousesViewModelFactory
     private lateinit var viewModel: HousesViewModel
-    private lateinit var rv : RecyclerView
+    private lateinit var rv: RecyclerView
+    private lateinit var adapter: HousesAdapter
 
 
     override fun onCreateView(
@@ -30,18 +31,22 @@ class HousesFragment : Fragment() {
         val api = HouseApi()
         val repo = HouseRepo(api)
         factory = HousesViewModelFactory(repo)
-        viewModel = ViewModelProviders.of(this).get(HousesViewModel::class.java)
-        rv = view?.findViewById(R.id.rvHouses) ?: return
-
+        viewModel = ViewModelProviders.of(this, factory).get(HousesViewModel::class.java)
+        rv = view?.findViewById(R.id.rvHouses)!!
+        rv.layoutManager = LinearLayoutManager(requireContext())
+        rv.setHasFixedSize(true)
         //use the adapter
-        viewModel.getHouses()
+
         viewModel.houses.observe(viewLifecycleOwner, Observer { houses ->
-        rv.also {
-            it.layoutManager = LinearLayoutManager(requireContext())
-            it.setHasFixedSize(true)
-            it.adapter = HousesAdapter(houses, this)
-        }
+            rv.also {
+            rv.adapter = HousesAdapter(houses, this)
+
+
+
+
+            }
         })
+        viewModel.getHouses()
 
 
     }
