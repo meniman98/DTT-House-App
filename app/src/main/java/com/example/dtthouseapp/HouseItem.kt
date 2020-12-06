@@ -1,6 +1,7 @@
 package com.example.dtthouseapp
 
 data class HouseItem(
+    var url: String = "https://intern.docker-dev.d-tt.nl/",
     val bathrooms: String,
     val bedrooms: String,
     val city: String,
